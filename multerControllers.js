@@ -40,6 +40,7 @@ export const pdfFilter = function(req, file, cb) {
     }
 }
 
+/** Filters multiple fields */
 export const fields = [
     {
         name: 'avatar',
@@ -70,7 +71,7 @@ export const multipleFilter = function(req, file, cb) {
 
     }
     if(!flag) {
-        const message = `Field ${file.fieldname} is wrong type ${file.mimetype}. \n`
+        const message = `${file.mimetype} is wrong type for ${file.fieldname} field. \n`
         !req.invalidFiles ? req.invalidFiles = [message] : req.invalidFiles.push(message)
     }
     
